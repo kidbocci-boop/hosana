@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosana.ao | Artigos Sagrados & Devocionais em Angola</title>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas de Animação Espiritual de Fundo (Poeira Divina) -->
+    <canvas id="sacredCanvas"></canvas>
+
+    <!-- Cabeçalho / Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="cross" class="logo-icon"></i>
+                <span>HOSANA<span class="logo-ao">.ao</span></span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home">Início</a>
+                <a href="#produtos">Coleção</a>
+                <a href="#sobre">Nossa Fé</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Botão de Modo Noturno -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Modo Noturno" title="Alternar modo noturno">
+                    <i data-lucide="moon" id="themeIcon"></i>
+                </button>
+
+                <!-- Botão do Carrinho -->
+                <button class="cart-btn" id="cartBtn" aria-label="Carrinho de Compras">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section com Grande Ícone Católico em Motion -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge"><i data-lucide="sparkles"></i> Artigos Sagrados & Devocionais</span>
+                <h1>Artigos Sagrados para Fortalecer a Sua Fé</h1>
+                <p>Bíblias, Túnicas litúrgicas, Livros, Terços e Imagens de alta qualidade com entrega rápida em toda Luanda e províncias de Angola.</p>
+                <div class="hero-buttons">
+                    <a href="#produtos" class="btn btn-primary">Ver Catálogo <i data-lucide="arrow-right"></i></a>
+                    <a href="#sobre" class="btn btn-outline">Saber Mais</a>
+                </div>
+            </div>
+
+            <!-- Grande Ícone Católico em Motion Estratégico (Ostensório / Cruz 3D) -->
+            <div class="hero-motion-container">
+                <div class="divine-aura"></div>
+                <div class="ray-of-light"></div>
+                <div class="floating-sacred-icon">
+                    <div class="cross-stem"></div>
+                    <div class="cross-beam"></div>
+                    <div class="center-sunburst">
+                        <i data-lucide="sun" class="sunburst-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção de Produtos -->
+    <section id="produtos" class="products-section">
+        <div class="section-header">
+            <span class="sub-title">COLECÇÃO SAGRADA</span>
+            <h2>Produtos em Destaque</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <!-- Barra de Pesquisa Dinâmica -->
+        <div class="search-bar-container">
+            <div class="search-input-wrapper">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar Bíblias, Terços, Túnicas, Livros..." aria-label="Pesquisar produtos">
+            </div>
+        </div>
+
+        <!-- Filtros por Categoria -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="biblia">Bíblias</button>
+            <button class="filter-btn" data-filter="terco">Terços</button>
+            <button class="filter-btn" data-filter="livro">Livros</button>
+            <button class="filter-btn" data-filter="tunica">Túnicas</button>
+            <button class="filter-btn" data-filter="imagem">Imagens</button>
+            <button class="filter-btn" data-filter="acessorio">Acessórios</button>
+        </div>
+
+        <!-- Grid de Produtos -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Renderizado dinamicamente via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Sobre / Diferenciais -->
+    <section id="sobre" class="about-section">
+        <div class="about-container">
+            <div class="about-card">
+                <i data-lucide="shield-check" class="about-icon"></i>
+                <h3>Qualidade Sagrada</h3>
+                <p>Produtos selecionados com rigor, durabilidade e respeito devocional.</p>
+            </div>
+            <div class="about-card">
+                <i data-lucide="truck" class="about-icon"></i>
+                <h3>Entrega em Angola</h3>
+                <p>Enviamos para Luanda e todas as províncias com rapidez e segurança.</p>
+            </div>
+            <div class="about-card">
+                <i data-lucide="message-square-heart" class="about-icon"></i>
+                <h3>Atendimento Próximo</h3>
+                <p>Horário de pedidos: 07:00 às 22:00, diretamente via WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal do Carrinho -->
+    <div class="cart-modal-overlay" id="cartModal">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h3><i data-lucide="shopping-cart"></i> Seu Pedido - Hosana.ao</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            
+            <div class="cart-body" id="cartBody">
+                <!-- Itens adicionados aparecem aqui -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="store-hours-notice">
+                    <i data-lucide="clock"></i> Horário de pedidos: <strong>07:00 - 22:00</strong>
+                </div>
+                <div class="total-container">
+                    <span>Total do Pedido:</span>
+                    <strong id="cartTotal">0 AOA</strong>
+                </div>
+                <button class="btn-whatsapp" id="checkoutWhatsappBtn">
+                    <i data-lucide="message-circle"></i> Finalizar Pedido no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="cross" class="logo-icon"></i>
+                    <span>HOSANA<span class="logo-ao">.ao</span></span>
+                </div>
+                <p>Promovendo a fé e a devoção no lar angolano com elegância e amor.</p>
+            </div>
+            <div class="footer-info">
+                <h4>Contacto Directo</h4>
+                <p><i data-lucide="phone"></i> +244 923 000 000</p>
+                <p><i data-lucide="map-pin"></i> Luanda, Angola</p>
+                <p><i data-lucide="clock"></i> Atendimento: 07h00 - 22h00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hosana.ao. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
